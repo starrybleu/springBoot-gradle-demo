@@ -13,9 +13,13 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 
+war {
+	baseName = 'springboot-gradle-demo'
+}
 
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
@@ -29,13 +33,14 @@ dependencies {
 	//compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('mysql:mysql-connector-java')
+	compile('org.hibernate.javax.persistence:hibernate-jpa-2.1-api')
 //	compile('org.hibernate:hibernate-core')	// spring-boot-starter-data-jpa에 포함되어 있음(?)
 //	compile('org.hibernate:hibernate-entitymanager')	// spring-boot-starter-data-jpa에 포함되어 있음(?)
-	compile('org.hibernate.javax.persistence:hibernate-jpa-2.1-api')
-	compile('org.apache.tomcat.embed:tomcat-embed-jasper')
-	compile('javax.servlet:jstl') // JSTL 사용하기 위한 라이브러리
-	compile('org.yaml:snakeyaml')
+//	compile('org.yaml:snakeyaml')
+	providedRuntime('mysql:mysql-connector-java')
+	providedRuntime('org.apache.tomcat.embed:tomcat-embed-jasper')
+	providedRuntime('javax.servlet:jstl') // JSTL 사용하기 위한 라이브러리
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat') // 외부 톰캣 사용을 위해 추가(war로 배포)
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
