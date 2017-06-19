@@ -2,7 +2,7 @@ package com.bean.vo;
 
 
 
-public class BoardVO {
+public class Board {
 	private String writer;
 	private String title;
 	private String body;

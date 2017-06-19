@@ -3,3 +3,14 @@ spring:
         view:
             prefix: /WEB-INF/view/
             suffix: .jsp
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+
+    datasource:
+        url: jdbc:mysql://sample.com:13306/test_db?useUnicode=true&characterEncoding=utf-8
+        username: sampleuser
+        password: samplepw
+        driverClassName: com.mysql.jdbc.Driver

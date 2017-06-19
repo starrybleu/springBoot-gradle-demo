@@ -1,6 +1,6 @@
 package com.bean.controller;
 
-import com.bean.vo.BoardVO;
+import com.bean.vo.Board;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/board")
 public class BoardController {
 
 	@RequestMapping("/hello")
@@ -26,7 +26,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/board/inputPro")
-	public ModelAndView inputPro(BoardVO bVO, HttpServletRequest request) {
+	public ModelAndView inputPro(Board bVO, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("/board/inputPro");
 		mv.addObject("bVO", bVO);
 

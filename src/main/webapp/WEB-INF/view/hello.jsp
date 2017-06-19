@@ -3,11 +3,11 @@
 <!DOCTYPE>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
 </head>
 <body>
-테스트 중 <br/>
-${message}
+    테스트 중 <br/>
+    ${message}
 </body>
 </html>
